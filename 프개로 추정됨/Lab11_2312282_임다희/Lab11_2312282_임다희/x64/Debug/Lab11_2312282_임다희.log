@@ -1,0 +1,4 @@
+﻿  Lab11_2312282_임다희.c
+C:\Lab11_2312282_임다희\Lab11_2312282_임다희\Lab11_2312282_임다희.c(52,14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Lab11_2312282_임다희\Lab11_2312282_임다희\Lab11_2312282_임다희.c(57,12): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Lab11_2312282_임다희.vcxproj -> C:\Lab11_2312282_임다희\x64\Debug\Lab11_2312282_임다희.exe

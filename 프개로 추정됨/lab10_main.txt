@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.141592
+
+main() {
+    double integ(double a, double b, int n, double (*f)(double));                                                                /* integrate y = f(x) */
+    double f1(double x); /* f1(x) = x * x + x; */
+
+    printf("int_0^1 x*x + x = %.3g\n", 1.0 / 3 + 1.0 / 2);
+    printf("int_0^1 x*x + x = %.3g with 5 parts\n", integ(0, 1, 5, f1));
+    printf("int_0^1 x*x + x = %.3g with 10 parts\n", integ(0, 1, 10, f1));
+    printf("int_1^2 x*x + x = %.3g with 100 parts\n",integ(0, 1, 100, f1));
+    printf("\n");
+    printf("int_0^PI/2 sin(x) = %.3g\n", 1.0);
+    printf("int_0^PI/2 sin(x) = %.3g with 5 parts\n", integ(0, PI/2, 5, sin));
+    printf("int_0^PI/2 sin(x) = %.3g with 10 parts\n", integ(0, PI/2, 10, sin));
+    printf("int_0^PI/2 sin(x) = %.3g with 100 parts\n", integ(0, PI/2, 100, sin));
+}
+
+double integ(double a, double b, int n, double (*f)(double)) 
+{
+    double sum, x, x1, delta, area;
+    int    i;
+
+    delta = (b - a) / n;
+    for (i = 0, sum = 0.0; i < n; i++) {
+        x = a + i * delta;
+        x1 = x + delta;
+        area = delta * (f(x) + f(x1)) / 2;
+        sum += area;
+    }
+    return sum;
+}
+
+double f1(double x) {
+    return x * x + x;
+}

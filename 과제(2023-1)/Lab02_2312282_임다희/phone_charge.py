@@ -1,0 +1,6 @@
+call=float(input("음성 통화 시간(초) : "))
+data=float(input("데이터 사용량(MB) : "))
+Cbill=int(1.98*call)
+Dbill=int(55*data)
+total=int(12100+1.98*call+55*data)
+print(" 기본요금 : 12,100 원 \n 통화요금 : %s 원 \n 데이터요금 : %s 원 \n 총 요금 : %s 원"%(format(Cbill,','),format(Dbill,','),format(total,',')))
