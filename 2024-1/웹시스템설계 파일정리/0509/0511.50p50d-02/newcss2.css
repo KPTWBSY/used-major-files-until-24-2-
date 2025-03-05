@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root{ /*가상 선택자 중 하나. 웹 문서 구조에서 가장 상위 요소 선택.
+    html에서 root는 항상 html을 가리킴. 문서 전반적으로 재사용할 임의가 있는 값 작성.*/
+    --line-border-fill:#3498db;
+    --line-border-empty:#383838;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f1f1f1;
+    font-family: 'Muli', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content: center; /*수평 가운데정렬?*/
+    height:100vh; /*높이 정해줌>> 이러면 ailgn items 의 수직가운데정렬 발동*/
+    overflow: hidden;
+    margin:0;
+}
+
+.container{
+    text-align: center; /*하위 요소의 텍스트 모두 가운데정렬.*/
+}
+
+.progress-container{
+    display:flex;
+    justify-content: space-between; /*간격 두고 요소들 정렬.*/
+    position:relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width:350px;   
+}
+
+.progress-container::before
+/*가상 요소. progress-container에 이런 가상 요소를 추가..
+html에는 존재하지 않고 css에서만 존재.*/{
+    content:'';
+    background-color: var(--line-border-empty);
+    position:absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    height:4px;
+    width:100%;
+    z-index:-1;
+     /*z index 값이 낮은 요소가 브라우저에 먼저(맨 앞으로 보내기) 표시됨. */
+}
+
+.progress{ /*현재는 안보임. progress에 내용을 안써서..?*/
+    background-color: var(--line-border-fill);
+    position:absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    height:4px;
+    width:0%; /*js로 파란색 진행바의 길이 변화시킴.*/
+    z-index:-1;
+    transition:0.2s ease; /*next, prev 눌렀을때 부드럽게 진행바 움직이기.*/
+}
+
+.circle{
+    background-color: #f1f1f1;
+    color:#e2e2e2;
+    border-radius: 50%;
+    height:30px;
+    width:30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:3px solid var(--line-border-empty);
+    transition:0.4s ease;
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn{
+    background-color: var(--line-border-fill);
+    color:#fff;
+    border:0;
+    border-radius: 6px;
+    cursor:pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin:5px;
+    font-size: 14px;
+}
+
+.btn:active{
+    transform:scale(0.98); /*버튼 누르면 살짝 작아졌다가 다시 돌아옴.*/
+}
+
+.btn:focus{
+    outline:0;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}

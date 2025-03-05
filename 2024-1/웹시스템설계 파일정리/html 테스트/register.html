@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>2312282 임다희</title>
+    </head>
+
+   <body>
+    <header>
+        <h1>동아리 가입 양식</h1>
+    </header>
+
+    <section>
+     <form>
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="학과 목록">학부/학과</label>
+        <input list="학과 목록">
+        <datalist id="학과 목록">
+            <option value="소프트웨어학부">
+            <option value="법학부">
+            <option value="한국어문학부">
+            <option value="기초공학부">
+        </datalist><br>
+
+        <label for="학년">학년</label>
+        <input type="radio" id="1학년" name="학년" value="1학년">
+        <label for="1학년">1학년</label>
+        <input type="radio" id="2학년" name="학년" value="2학년">
+        <label for="2학년">2학년</label>
+        <input type="radio" id="3학년" name="학년" value="3학년">
+        <label for="3학년">3학년</label>
+        <input type="radio" id="4학년" name="학년" value="4학년">
+        <label for="4학년">4학년</label><br>
+
+        <label for="number">학번</label>
+        <input type="text" id="number" name="number"><br>
+
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="phone_number">전화번호</label>
+        <input type="tel" id="phone_number" name="phone_number"
+        pattern="[0-1]{3}-[0-9]{4}-[0-9]{4}"><br>
+
+        <label for="동기">가입 동기</label>
+        <textarea name="동기" rows="4" cols="20">
+        </textarea><br>
+        
+
+        <input type="submit" value="가입하기">
+        <input type="reset" value="취소하기">
+     </form>
+    </section>
+
+   </body>

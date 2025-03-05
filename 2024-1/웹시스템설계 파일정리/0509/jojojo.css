@@ -1,0 +1,16 @@
+body{
+    margin:0;
+}
+
+.js-onOffwrap{
+    margin:auto;
+    background-color: green;
+}
+
+.js-playBtn{
+    position:absolute;
+    left:300px;
+    background-color:red;
+    width:100px;
+    height:100px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        #number{
+            font-weight: bold;
+        }
+
+        #container{
+
+            position:relative;
+            left:25vw;
+            top:25vh;
+            height: 50vh;
+            width:50vw;
+
+            background-color: aqua;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 15%;
+            box-shadow: 3vw 3vh 5px gray;
+        }
+
+        #button{
+            color:red;
+            width:25vw;
+            height:5vh;
+            margin-bottom:2.5vh;
+            box-shadow: 0.3vw 0.3vh 2px black;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="lotto">로또 번호 생성</h1>
+        <input type="button" id="button" value="생성 결과 보기">
+        <div id="number">결과 : </div>
+    </div>
+    <script>
+
+        const num=document.getElementById("number")
+        const button=document.getElementById("button")
+        button.addEventListener('click',()=>{
+            num.innerHTML=("결과 : ");
+
+            let x=0;
+            while (x<6){
+                let y=Math.floor(Math.random() * 45) + 1;
+                num.innerHTML+=(y + " ");
+                x++;
+        }})
+
+
+    </script>
+</body>
+</html>

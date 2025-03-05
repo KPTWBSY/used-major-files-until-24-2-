@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <h1>새로운 창 화면 가운데 띄우기 실습</h1>
+    <button onclick="closeCenter()">닫기</button>
+    <script>
+        
+        function openCenter(doc, win, w, h){
+            var left = (screen.availWidth-w) / 2; // 팝업 창의 왼쪽 좌표
+            var top = (screen.availHeight-h) / 2; // 팝업 창의 위쪽 좌표
+            var opt = "left=" + left + ",top=" + top + ",width=" + w + ",height=" + h;
+            mywindow=window.open(doc, win, opt);
+            }
+        function closeCenter(){
+            mywindow.close();
+        }
+  
+        openCenter("lab06-2.html","pop", 500, 400) 
+
+
+      
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

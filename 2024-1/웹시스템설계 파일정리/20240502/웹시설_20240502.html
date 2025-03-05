@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="rect"></div>
+        <style>
+            #rect {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>
+        <script>
+            let myrect=document.getElementById("rect");
+            myrect.addEventListener("mouseover",function(){
+                myrect.style.backgroundColor="blue";
+                myrect.style.borderRadius="50%";
+
+            });
+            myrect.addEventListener("mouseout",function(){
+                myrect.style.backgroundColor="";
+                myrect.style.borderRadius="";
+            });
+
+
+        </script>
+        <h1 id="title"></h1>
+        <h1 id="spring" class="season">봄</h1>
+        <h1 id="summer" class="season">여름</h1>
+        <h1 id="autumn" class="season">가을</h1>
+        <h1 id="winter" class="season">겨울</h1>
+
+        <script>
+            let title=prompt("제목을 입력하세요");
+            let t=document.getElementById('title').innerHTML=title;
+            //t.style.color='blue';
+            let season=document.getElementsByClassName('season');
+            for(var i=0; i<season.length;i++){
+                season[i].style.color='red'
+            }
+        </script>
+    </body>
+</html>

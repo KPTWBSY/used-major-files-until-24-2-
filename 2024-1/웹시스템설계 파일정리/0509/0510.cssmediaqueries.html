@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            /*@media screen{
+                body{
+                    background-color: rgb(210,176,241);
+                }
+            }
+            @media print{
+                body{
+                    background-color: red;
+                }
+            }*/
+
+            *{
+                margin: 0; padding:0;
+            }
+            body{
+                width:800px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            #menu{
+                width:200px;
+                float:left;
+                background-color: red;
+            }
+            #section{
+                float:right;
+            }
+            li{list-style: none;}
+            @media screen and (max-width:767px) {
+                body{width:auto}
+                #menu{width:auto; float:none;}
+                #section{width:auto; float:none;}
+            }
+        </style>
+    </head>
+    <body>
+        <!--@media query 사용 예제-->
+        <div id="menu">
+            <ul>
+                <li>메뉴A</li>
+                <li>메뉴B</li>
+                <li>메뉴C</li>
+            </ul>
+        </div>
+        <div id="section">
+            <h1><b>Lorem ipsum</b></h1>
+            <h3>안녕하세요? 안녕히가세요.</h3>
+        </div>
+    </body>
+</html>

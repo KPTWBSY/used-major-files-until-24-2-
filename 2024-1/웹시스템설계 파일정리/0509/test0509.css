@@ -1,0 +1,117 @@
+* /*모든 요소 선택*/{
+    box-sizing: border-box; /* 설정한 width와 height값이 안쪽 여백과 테두리(패딩, 보더)까지 포함.*/
+    /* content-box: 설정한 w,h값이 곧 요소 내부의 콘텐츠 크기. 박스 사이징의 기본값.*/
+}
+
+body{
+    margin: 0; /* body의 기본 마진 제거.*/
+    font-family: sans-serif;
+}
+a{
+    text-decoration:none; /* 기본 밑줄 제거. */
+    color: #888;
+}
+a:hover{
+    text-decoration: underline;
+}
+header{
+    margin: auto; /*헤더의 양쪽 여백을 동등하게 맞춤-> 수평 가운데 정렬*/
+    width: 1080px;
+    height: 215px;/* height 지정하면 main 영역의 높이 고정. 하위에 포함되는 요소가 main 길이 초과하면 overflow로 스크롤 생성. */
+    display: flex; /*가로 한 줄로 배열*/
+    align-items: center;/*하위 요소를 수직 가운데정렬. 이거 안하면 요소들이 다 위쪽에 몰려 붙어있음..*/
+    position: relative;/*요소 자기 자신을 기준으로 배치.*/
+}
+fieldset{
+    border:none; /*기본 보더 없애기.*/
+}
+.visually-hidden{ /*legend를 안보이게 설정하기.*/
+    position: absolute !important; /*absolute: 절대적인 위치에 두기, 부모 기준으로 이동. 
+    부모 기준 포지션이 relative, fixed, absolute 하나라도 있으면 그 부모 기준으로 절대적으로 움직임.
+    일반적으로 absolute를 쓸 경우 기준이 될 부모에게 position relative 부여하고 원하는 위치 지정. */
+
+    /*!important: css는 같은 속성을 여러번 정의했을 때 나중에 쓴 값이 최종적으로 적용되는데,
+    나중에 설정한 값이 적용되지 않게 하려면 붙여야 함.*/
+    height: 1px;
+    width: 1px;
+    overflow: hidden; /*overflow: 요소 내의 컨텐츠가 너무 커서 요소 내에 모두 보여주기 힘들 때 사용.
+    기본값: visible. 넘칠 경우 컨텐츠가 상자 밖으로 보여짐
+    hidden: 넘치는 부분은 잘려서 보이지 않음.*/
+    clip: rect(1px,1px,1px,1px); /*clip: 요소의 특정 부분만 나오게 함.*/
+    white-space: nowrap; /*텍스트가 길어서 부모 요소 안의 가로폭을 넘어가더라도 자동으로 줄바꿈이 일어나지 않음.*/
+}
+.links{/*링크들을 우측 상단에 위치시키기.*/
+    position: absolute;
+    top:0;
+    right:0;
+}
+.link_text{
+    font-size: 10px;
+    margin-left: 5px;
+}
+.img_logo{
+    margin-bottom:12px;
+    width:220px;
+    height:65px;
+}
+.search_box{
+    width:520px;
+    height:50px;
+    border:2px solid #03cf5d;
+    display: flex;
+    align-items: center;
+}
+.search_box input{
+    flex: 9; /*search-box 내부에서 9만큼의 크기를 차지(비율). 검색창을 길게 해줌*/
+    height:46px;
+    padding-left:12px;
+    padding: right 12px;
+    border:none;
+    outline:none;
+    font-size:18px;
+}
+.search_box button{
+    flex: 1; /*search-box 내에서 1만큼의 크기를 차지(비율)*/
+    height: 46px;
+    margin:0;
+    padding:0;
+    border: none;
+    outline: none;
+    background: #03cf5d;
+    color: #ffffff;
+}
+/*nav*/
+header>nav{/*부모가 header인 nav element 선택*/
+    width: 100%;
+    height: 45px;
+    position:absolute; /*부모인 header(position: relative) 기준으로 absolute.*/
+    bottom:0;
+}
+.nav_items{
+    width:100%;
+    height:100%;
+    display:flex; /*가로 일렬 정렬.*/
+    justify-content: space-between; /*요소들 사이에 동일한 간격을 두고 정렬.*/
+    align-items: center; /*요소들을 수직 가운데정렬.*/
+    font-size: 15px;
+    font-weight: bold;
+    border-top: 1px solid #f1f3f6;
+}
+.nav_items ul>li{
+    display: inline-block; /*이것도..가로 일렬 정렬인데.. block처럼 마진 패딩(여백) 지정 가능?*/
+    margin-left: 8px;
+}
+
+.nav_items ul>li:nth-child(-n+7)>a{ /*7번째~1번째 요소까지 선택*/
+    color:#03cf5d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+main{
+    background: #f2f4f7;
+    min-height: 700px; /* min-height 지정하면 main 영역 내부에 하위 요소들이 작더라도 최소 길이 유지. */
+}
+.color_naver{ /*재사용 클래스*/
+    color:#03cf5d;
+}
